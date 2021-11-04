@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="css/printed.css" media="all" rel="StyleSheet" type="text/css" />
+		<link href="de_style.css" media="all" rel="StyleSheet" type="text/css" />
+		<meta name="generator" content="www.DrExplain.com" />
+					<title>&#x041E;&#x0442;&#x0441;&#x043B;&#x0435;&#x0436;&#x0438;&#x0432;&#x0430;&#x043D;&#x0438;&#x0435; &#x0434;&#x0435;&#x0439;&#x0441;&#x0442;&#x0432;&#x0438;&#x0439; &#x0441; &#x0437;&#x0430;&#x043B;&#x043E;&#x043C;</title>
+	</head>
+	<body>
+		<table class="pagetable">
+			<tr class="page" style="border-color: #ffffff;">
+				<td class="page_area" style="border-color: #ffffff; width: 100%;"><div class="description_on_page"><div class="p" style="text-align: center; direction: ltr; margin-left: 0px">
+<div class="ic"><h1><strong>Отслеживание действий с залом</strong></h1></div></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; <table class="de_tbl_1288 detbl" style="width: 1288px; height: 477; margin-left: 0; margin-right: auto;">
+<col style="width: 107px;" class="de_col_107" />
+<col style="width: 1181px;" class="de_col_1181" />
+<tr style="height: 477px">
+<td class="de_td_107" style = "padding: 2px; padding-bottom: 1px; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000;  width: 107px; vertical-align: top;" colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+</td><td class="de_td_1181" style = "padding: 2px; padding-bottom: 1px; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000;  width: 1181px; vertical-align: top;" colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; Для отслеживания действий с залом, отображенным компонентом <a class="local_link" href="zagruzka_gotovogo_komponenta.html"><span class="quote"><span class="de_AC776ED092">HallView</span></span></a><span class="quote"><span class="de_56F4564E24"> , </span><span class="de_F74C9CAC1F">используется метод </span><span class="de_CA1BBE3AD3">postMessage</span><span class="de_F74C9CAC1F">, который позволяет обеспечить взаимодействие внешних виджетов с основной страницей.</span></span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 16px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 16px">
+<span class="de_CA1BBE3AD3">Пример использования:</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 16px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<table class="de_tbl_684 detbl" style="width: 60%; margin-left: 0; margin-right: auto;">
+<col style="width: 100%;" class="de_col_684" />
+<tr style="height: 0px;">
+<td class="de_td_684" style = "padding: 2px; padding-bottom: 1px; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000;  width: 100%; vertical-align: top; background-color: #eeeeee;" colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34"><strong>var</strong> onmessage2</span><span class="de_04C818310D"> </span><span class="de_AF8E96AF30">=</span><span class="de_533C7C2B34"> <strong>function</strong></span><span class="de_AF8E96AF30">(</span><span class="de_533C7C2B34">e</span><span class="de_AF8E96AF30">) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; &#160; &#160; if</span><span class="de_AF8E96AF30"> (</span><span class="de_533C7C2B34">e.data == </span><span class="de_E3A7DE8AD3">'updateCart'</span><span class="de_AF8E96AF30">) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; &#160; &#160; &#160; &#160; updateOrder</span><span class="de_AF8E96AF30">()</span><span class="de_533C7C2B34">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; </span><span class="de_AF8E96AF30">&#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_AF8E96AF30">&#160; &#160; }</span><span class="de_533C7C2B34">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; $</span><span class="de_AF8E96AF30">(</span><span class="de_533C7C2B34"><strong>function </strong></span><span class="de_AF8E96AF30">() {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; &#160; &#160; if </span><span class="de_AF8E96AF30">(</span><span class="de_533C7C2B34">window.postMessage</span><span class="de_AF8E96AF30">) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; &#160; &#160; &#160; &#160; if </span><span class="de_AF8E96AF30">(</span><span class="de_533C7C2B34">typeof window.addEventListener !=</span><span class="de_E3A7DE8AD3"> 'undefined'</span><span class="de_AF8E96AF30">) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; window.addEventListener</span><span class="de_AF8E96AF30">(</span><span class="de_E3A7DE8AD3">'message'</span><span class="de_533C7C2B34">, onmessage2, false</span><span class="de_AF8E96AF30">)</span><span class="de_533C7C2B34">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; &#160; &#160; &#160; &#160; </span><span class="de_AF8E96AF30">}</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; &#160; &#160; &#160; &#160; else if </span><span class="de_AF8E96AF30">(</span><span class="de_533C7C2B34">typeof window.attachEvent != </span><span class="de_E3A7DE8AD3">'undefined'</span><span class="de_AF8E96AF30">) {</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; window.attachEvent</span><span class="de_AF8E96AF30">(</span><span class="de_E3A7DE8AD3">'onmessage'</span><span class="de_533C7C2B34">, onmessage2</span><span class="de_AF8E96AF30">)</span><span class="de_533C7C2B34">;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_533C7C2B34">&#160; &#160; &#160; </span><span class="de_AF8E96AF30">&#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_AF8E96AF30">&#160; &#160; &#160; &#160; }</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+<span class="de_AF8E96AF30"> &#160; &#160; })</span><span class="de_533C7C2B34">;</span></div>
+</td></tr></table></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 32px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 16px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 64px">
+&#160;</div>
+</td></tr></table></div>
+</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

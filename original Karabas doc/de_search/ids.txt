@@ -1,0 +1,159 @@
+1
+ Кассир
+ kassir.html
+2
+ Информация о системе Кассир
+ informatsiya_o_sisteme_kassir.html
+3
+ Введение
+ vvedenie_1.html
+4
+ О программе
+ o_programme.html
+5
+ Работа с программой
+ rabota_s_programmoj.html
+6
+ Документация по API и интеграции
+ dokumentatsiya_po_api_i_integratsii.html
+7
+ Введение
+ vvedenie_2.html
+8
+ Общая информация
+ obshchaya_informatsiya.html
+9
+ Пример подключения через API
+ primer_podklyucheniya_cherez_api.html
+10
+ Пример кода подключения через API
+ primer_koda_podklyucheniya_cherez_api.html
+11
+ Подключение с помощью API
+ podklyuchenie_s_pomoshchyu_api.html
+12
+ Авторизация
+ avtorizatsiya.html
+13
+ Список мероприятий
+ spisok_meropriyatij.html
+14
+ Количество мероприятий
+ kolichestvo_meropriyatij.html
+15
+ Статистика по мероприятию
+ statistika_po_meropriyatiyu.html
+16
+ Список товаров
+ spisok_tovarov.html
+17
+ Загрузка зала
+ zagruzka_zala.html
+18
+ Загрузка готового компонента
+ zagruzka_gotovogo_komponenta.html
+19
+ Отслеживание действий с залом
+ otslezhivanie_dejstvij_s_zalom.html
+20
+ Отрисовка схемы зала вручную
+ otrisovka_skhemy_zala_vruchnuyu.html
+21
+ Получение схемы зала
+ poluchenie_skhemy_zala.html
+22
+ Обновление схемы зала
+ obnovlenie_skhemy_zala.html
+23
+ Работа с заказом
+ rabota_s_zakazom.html
+24
+ Добавление места в корзину
+ dobavlenie_mesta_v_korzinu.html
+25
+ Удаление билета из корзины
+ udalenie_bileta_iz_korziny.html
+26
+ Получение информации о заказе
+ poluchenie_informatsii_o_zakaze.html
+27
+ Получение информации о заказе с информацией о продуктах
+ poluchenie_informatsii_o_zakaze_s_informatsiej_o_produktakh.html
+28
+ Подтверждение заказа
+ podtverzhdenie_zakaza.html
+29
+ Очистка текущего заказа
+ ochistka_tekushchego_zakaza.html
+30
+ Добавление товара в корзину
+ dobavlenie_tovara_v_korzinu.html
+31
+ Очистка товаров из заказа
+ ochistka_tovarov_iz_zakaza.html
+32
+ Изменение количества товара в корзине
+ izmenenie_kolichestva_tovara_v_korzine.html
+33
+ Удаление товара из корзины
+ udalenie_tovara_iz_korziny.html
+34
+ Справочники
+ spravochniki.html
+35
+ Типы событий
+ tipy_sobytij.html
+36
+ Страны
+ strany.html
+37
+ Города
+ goroda.html
+38
+ Места проведения
+ mesta_provedeniya.html
+39
+ Типы мест проведения
+ tipy_mest_provedeniya.html
+40
+ Залы
+ zaly.html
+41
+ Способы доставки
+ sposoby_dostavki.html
+42
+ Способы оплаты
+ sposoby_oplaty.html
+43
+ Валюты
+ valyuty.html
+44
+ Личный кабинет
+ lichnyj_kabinet.html
+45
+ Авторизация клиента
+ avtorizatsiya_klienta.html
+46
+ Регистрация клиента
+ registratsiya_klienta.html
+47
+ Получение профиля клиента
+ poluchenie_profilya_klienta.html
+48
+ Восстановление пароля
+ vosstanovlenie_parolya.html
+49
+ Виджет «Kassir:Касса»
+ vidzhet__kassir_kassa_.html
+50
+ Использование виджета
+ ispolzovanie_vidzheta.html
+51
+ Дополнительные настройки для полноценной работы кассы
+ dopolnitelnye_nastrojki_dlya_polnotsennoj_raboty_kassy.html
+52
+ Список терминов и сокращений
+ spisok_terminov_i_sokrashchenij.html
+53
+ Часто задаваемые вопросы
+ chasto_zadavaemye_voprosy.html

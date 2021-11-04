@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="css/printed.css" media="all" rel="StyleSheet" type="text/css" />
+		<link href="de_style.css" media="all" rel="StyleSheet" type="text/css" />
+		<meta name="generator" content="www.DrExplain.com" />
+					<title>&#x041F;&#x0440;&#x0438;&#x043C;&#x0435;&#x0440; &#x043F;&#x043E;&#x0434;&#x043A;&#x043B;&#x044E;&#x0447;&#x0435;&#x043D;&#x0438;&#x044F; &#x0447;&#x0435;&#x0440;&#x0435;&#x0437; API</title>
+	</head>
+	<body>
+		<table class="pagetable">
+			<tr class="page" style="border-color: #ffffff;">
+				<td class="page_area" style="border-color: #ffffff; width: 100%;"><div class="description_on_page"><div class="p" style="text-align: center; direction: ltr; margin-left: 0px">
+<div class="ic"><h1><strong>Пример подключения через API</strong></h1></div></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; Для тестового подключения введите в соответствующие поля свой <strong>PID</strong> и <strong>UID</strong>, полученные при регистрации на <strong>http://kassir.kartina.tv</strong>.&#160; </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; Пример кода можно посмотреть <a class="local_link" href="primer_koda_podklyucheniya_cherez_api.html"><span class="de_2B94C39861">тут</span></a>.</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<hr style="width: 100%; height: 1px; text-align: left; margin-left: 0; margin-right: auto; border:none; background-color:#000000; color: #000000; clear:none;" /></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+
+</script>
+
+<script>
+
+ var curr;
+ var Order;
+ var _auth;
+ var pid_;
+ var uid_;
+ var src="http://test.frontmanager.com.ua/";
+$(function(){
+var onmessage2 = function(e) {
+        if (e.data == 'updateCart') {
+            Rec();
+        }
+    };
+    $(function () {
+        if (window.postMessage) {
+            if (typeof window.addEventListener != 'undefined') {
+                window.addEventListener('message', onmessage2, false);
+            }
+            else if (typeof window.attachEvent != 'undefined') {
+                window.attachEvent('onmessage', onmessage2);
+            }
+        }
+     });
+$("#selEvents").change(function(){
+	
+	loadHall($(this).val());
+	});
+
+
+});
+
+function loadHall(ev) {
+var frameSrc = src + "/hallView.aspx?width=800&height=600&includeJs=1&__auth=" + _auth + "&event=" + ev;
+        $("#hallContainer").attr("src", frameSrc);
+}
+ 
+ 
+ function EventList() {
+ 	$.get(src +"GetPartnerEventsCommand.cmd?__auth="+_auth,
+ 	function (data) {
+ 		$("#selEvents").html("");
+ 		for ( var i=0; i <data.Events.length; i++) {
+ 			var ev = data.Events[i];
+ 			$("<option value='" + ev.EventId + "'>" + ev.ActivityName + "-" +ev.EventName + "</option>").appendTo($("#selEvents"));
+ 		}
+ 			
+ 	}
+ 	
+ 
+ 	, "json");
+ 	
+ 	}
+
+function BuyTicket() {
+     fio_u=document.getElementById("input_fio").value;
+	 email_u=document.getElementById("input_mail").value;
+	 address_u=document.getElementById("input_address").value;
+	 komment_u=document.getElementById("input_komment").value;
+	 
+ elem1=document.getElementById("check01");
+ elem2=document.getElementById("check02");
+ var status_order;
+ status_order="";
+ if (elem1.checked) {status_order="0"};
+ if (elem2.checked) {status_order="1"};
+  if (status_order!="")	 {$.get(
+  src+"ConfirmOrderCommand.cmd", {
+   __auth: _auth,
+   order: Order,
+   status: status_order,
+   client_name: fio_u,
+   email: email_u,
+   address: address_u,
+   comment: komment_u
+  },
+  function(data) {
+   Rec();
+   alert("Order "+Order+" paid.");
+  });
+  }
+  else {alert("Activity not checked!")}
+ }
+
+function clear_order(){
+	$.get(src+"ClearCurrentOrderCommand.cmd", {
+		__auth: _auth},
+	function(data) {
+		Rec();
+	});
+}
+function Rec() {
+	Recicle.innerHTML="";
+	$.get(src+"GetOrderCommand.cmd?__auth="+_auth,
+	function (data){
+		curr = data.currencyName;
+		Order = data.orderId;
+		for ( var i=0; i <data.items.length; i++) {
+	var re = data.items[i];
+	$("<option value='"+ re.id +"'>" + re.id + " "  + re.eventName + " " + re.zone + " " + re.row + " " + re.number + " " + re.price + " " + curr + "</option>").appendTo($("#Recicle"))	;
+	
+	}
+	}
+, "json");
+}
+
+
+function click01() 
+{ 
+    elem1=document.getElementById("check01");
+  elem2=document.getElementById("check02");
+  if (elem1.checked) {elem2.checked=0} 
+} 
+function click02() 
+{ 
+  elem1=document.getElementById("check01");
+  elem2=document.getElementById("check02");
+  if (elem2.checked) {elem1.checked=0} 
+} 
+
+function bilet_id(){
+	var objSel = document.getElementById("Recicle").childElementCount;
+	var obj_index=document.getElementById("Recicle");
+    
+		for (var i=0; i<objSel; i++){
+	if (obj_index.options[i].selected) {
+		id_ticket=obj_index.options[i].value;
+			$.get(src+"DeletePlaceFromCartCommand.cmd", {
+		__auth: _auth,
+		orderItem: id_ticket
+		},
+	function(data) {
+		Rec();
+	});
+}	}}
+function auth_(){
+$.post(src +"LoginCommand.cmd",
+{
+  __pid: pid_,
+  __uid: uid_
+}, function (data) {
+	
+  _auth = data.__auth;
+  document.getElementById("input_pid").value=pid_;
+  document.getElementById("input_uid").value=uid_;
+  
+    EventList();
+}
+
+, "json");
+	}
+function Refresh(){
+	pid_=document.getElementById("input_pid").value;
+	uid_=document.getElementById("input_uid").value;
+	
+	auth_();
+}
+</script>
+
+
+
+
+<body>
+
+<B>Выбор мероприятия:</B></BR>
+<select style="width:400px" id="selEvents"></select> 
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <B>PID:</B><input style="width:300px" id="input_pid" type=TEXT   ></input>
+&nbsp&nbsp <B>UID:</B><input style="width:300px" id="input_uid" type=TEXT   ></input>
+&nbsp&nbsp<button class="btn" onclick="Refresh()">Подключится</button></BR>
+<B>Корзина:</B></BR>
+<select style="width:400px" id="Recicle" size="5" multiple="multiple" ondblclick="bilet_id()"> </select></BR>
+<button class="btn" onclick="bilet_id()">Удалить билет</button></BR>
+<B>Действие:</B></BR>
+<input type="checkbox" id="check01" name="check01" onClick='click01()' > Зарезервировать</BR>
+<input type="checkbox" id="check02" name="check02" onclick='click02()'> Продать</BR>
+<B>Ф.И.О:</B></BR>
+<input style="width:400px" id="input_fio" type=TEXT  placeholder="Ф.И.О" ></input><BR></BR>
+<B>E-Mail:</B></BR>
+<input style="width:400px" id="input_mail" type=TEXT  placeholder="E-Mail" ></input><BR></BR>
+<B>Адрес:</B></BR>
+<input style="width:400px" id="input_address" type=TEXT placeholder="Адрес" ></input><BR></BR>
+<B>Комментарии:</B></BR>
+<textarea rows=4 cols=47 id="input_komment" placeholder="Комментарии" ></textarea><BR></BR>
+<button class="btn" onclick="BuyTicket()">Купить</button><button class="btn" onclick="clear_order()">Очистить заказ</button>
+	 
+	
+
+<div>
+
+  <iframe id="hallContainer" style="width:850px;height:650px;border:0;"></iframe>
+  
+</div>
+
+
+</body>
+</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<hr style="width: 100%; height: 1px; text-align: left; margin-left: 0; margin-right: auto; border:none; background-color:#000000; color: #000000; clear:none;" /></div>
+</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="css/printed.css" media="all" rel="StyleSheet" type="text/css" />
+		<link href="de_style.css" media="all" rel="StyleSheet" type="text/css" />
+		<meta name="generator" content="www.DrExplain.com" />
+					<title>&#x041F;&#x0440;&#x0438;&#x043C;&#x0435;&#x0440; &#x043A;&#x043E;&#x0434;&#x0430; &#x043F;&#x043E;&#x0434;&#x043A;&#x043B;&#x044E;&#x0447;&#x0435;&#x043D;&#x0438;&#x044F; &#x0447;&#x0435;&#x0440;&#x0435;&#x0437; API</title>
+	</head>
+	<body>
+		<table class="pagetable">
+			<tr class="page" style="border-color: #ffffff;">
+				<td class="page_area" style="border-color: #ffffff; width: 100%;"><div class="description_on_page"><div class="p" style="text-align: center; direction: ltr; margin-left: 0px">
+<div class="ic"><h1><strong>Пример кода подключения через API</strong></h1></div></div>
+<div class="p" style="text-align: center; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: center; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<table class="de_tbl_1002 detbl" style="width: 1002px; height: 3874; margin-left: 0; margin-right: auto;">
+<col style="width: 100px;" class="de_col_100" />
+<col style="width: 902px;" class="de_col_902" />
+<tr style="height: 3874px">
+<td class="de_td_100" style = "padding: 2px; padding-bottom: 1px; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000;  width: 100px; vertical-align: top;" colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+</td><td class="de_td_902" style = "padding: 2px; padding-bottom: 1px; border-left-style: none; border-left-width: 1px; border-left-color: #000000; border-right-style: none; border-right-width: 1px; border-right-color: #000000; border-top-style: none; border-top-width: 1px; border-top-color: #000000; border-bottom-style: none; border-bottom-width: 1px; border-bottom-color: #000000;  width: 902px; vertical-align: top; background-color: #ebeae9;" colspan = "1" rowspan = "1" >
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<span class="de_289E3A8E03">&lt;!-- Обязательно подключаем библиотеку jquery --&gt;</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;script src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;script&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ var curr;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ var Order;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ var _auth;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ var pid_;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ var uid_;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ var src=&quot;http://kassir.kartina.tv/&quot;;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<span class="de_289E3A8E03">/* Пример метода postMessage для отслеживания изменений в зале */</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+$(function(){</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+var onmessage2 = function(e) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; if (e.data == 'updateCart') {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; &#160; &#160; Rec();</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; }</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; };</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; $(function () {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; if (window.postMessage) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; &#160; &#160; if (typeof window.addEventListener != 'undefined') {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; window.addEventListener('message', onmessage2, false);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; &#160; &#160; }</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; &#160; &#160; else if (typeof window.attachEvent != 'undefined') {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; window.attachEvent('onmessage', onmessage2);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; &#160; &#160; }</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; }</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; &#160; });</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+$(&quot;#selEvents&quot;).change(function(){</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	loadHall($(this).val());</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	});</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+});</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<span class="de_289E3A8E03">/* Пример загрузки выбранного зала */</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function loadHall(ev) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+var frameSrc = src + &quot;/hallView.aspx?width=800&amp;height=600&amp;includeJs=1&amp;__auth=&quot; + _auth + &quot;&amp;event=&quot; + ev;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; &#160; &#160; $(&quot;#hallContainer&quot;).attr(&quot;src&quot;, frameSrc);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ <span class="de_289E3A8E03">/* Пример получения списока мероприятий */</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ function EventList() {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 	$.get(src +&quot;GetPartnerEventsCommand.cmd?__auth=&quot;+_auth,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 	function (data) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 		$(&quot;#selEvents&quot;).html(&quot;&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 		for ( var i=0; i &lt;data.Events.length; i++) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 			var ev = data.Events[i];</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 			$(&quot;&lt;option value='&quot; + ev.EventId + &quot;'&gt;&quot; + ev.ActivityName + &quot;-&quot; +ev.EventName + &quot;&lt;/option&gt;&quot;).appendTo($(&quot;#selEvents&quot;));</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 		}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 			</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 	}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 	</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 	, &quot;json&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 	</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ 	}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<span class="de_289E3A8E03">/* Пример покупки или резервирования билета */</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function BuyTicket() {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; &#160; fio_u=document.getElementById(&quot;input_fio&quot;).value;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	 &#160; &#160; email_u=document.getElementById(&quot;input_mail&quot;).value;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	 &#160; &#160; address_u=document.getElementById(&quot;input_address&quot;).value;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	 &#160; &#160; komment_u=document.getElementById(&quot;input_komment&quot;).value;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	 </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; &#160; elem1=document.getElementById(&quot;check01&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; &#160; elem2=document.getElementById(&quot;check02&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ var status_order;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ status_order=&quot;&quot;;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ if (elem1.checked) {status_order=&quot;0&quot;};</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ if (elem2.checked) {status_order=&quot;1&quot;};</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; if (status_order!=&quot;&quot;)	 {$.get(</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; src+&quot;ConfirmOrderCommand.cmd&quot;, {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; __auth: _auth,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; order: Order,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; status: status_order,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; client_name: fio_u,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; email: email_u,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; address: address_u,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; comment: komment_u</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; },</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function(data) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; Rec();</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+ &#160; alert(&quot;Order &quot;+Order+&quot; paid.&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; });</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; }</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; else {alert(&quot;Activity not checked!&quot;)}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function clear_order(){</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	$.get(src+&quot;ClearCurrentOrderCommand.cmd&quot;, {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		__auth: _auth},</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	function(data) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		Rec();</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	});</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<span class="de_289E3A8E03">/* Пример функции получения списка билетов для корзины */</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function Rec() {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	Recicle.innerHTML=&quot;&quot;;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	$.get(src+&quot;GetOrderCommand.cmd?__auth=&quot;+_auth,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	function (data){</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		curr = data.currencyName;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		Order = data.orderId;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		for ( var i=0; i &lt;data.items.length; i++) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	var re = data.items[i];</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	$(&quot;&lt;option value='&quot;+ re.id +&quot;'&gt;&quot; + re.id + &quot; &quot;&#160; + re.eventName + &quot; &quot; + re.zone + &quot; &quot; </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
++ re.row + &quot; &quot; + re.number + &quot; &quot; + re.price + &quot; &quot; + curr + &quot;&lt;/option&gt;&quot;).appendTo($(&quot;#Recicle&quot;))	;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+, &quot;json&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function click01() </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+{ </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; elem1=document.getElementById(&quot;check01&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; elem2=document.getElementById(&quot;check02&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; if (elem1.checked) {elem2.checked=0} </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+} </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function click02() </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+{ </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; elem1=document.getElementById(&quot;check01&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; elem2=document.getElementById(&quot;check02&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; if (elem2.checked) {elem1.checked=0} </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+} </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<span class="de_289E3A8E03">/* Пример работы с корзиной на базе списка */</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function bilet_id(){</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	var objSel = document.getElementById(&quot;Recicle&quot;).childElementCount;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	var obj_index=document.getElementById(&quot;Recicle&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;&#160; &#160; </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		for (var i=0; i&lt;objSel; i++){</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	if (obj_index.options[i].selected) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		id_ticket=obj_index.options[i].value;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+			$.get(src+&quot;DeletePlaceFromCartCommand.cmd&quot;, {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		__auth: _auth,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		orderItem: id_ticket</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		},</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function(data) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+		Rec();</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	});</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+}	}}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function auth_(){</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+<span class="de_289E3A8E03">/* Авторизация в системе */</span></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+$.post(src +&quot;LoginCommand.cmd&quot;,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+{</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; __pid: pid_,</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; __uid: uid_</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+}, function (data) {</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; _auth = data.__auth;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; document.getElementById(&quot;input_pid&quot;).value=pid_;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; document.getElementById(&quot;input_uid&quot;).value=uid_;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;&#160; </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &#160; EventList();</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+, &quot;json&quot;);</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+function Refresh(){</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	pid_=document.getElementById(&quot;input_pid&quot;).value;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	uid_=document.getElementById(&quot;input_uid&quot;).value;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	auth_();</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+}</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;/script&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;body&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;B&gt;Выбор мероприятия:&lt;/B&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;select style=&quot;width:400px&quot; id=&quot;selEvents&quot;&gt;&lt;/select&gt; </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp &lt;B&gt;PID:&lt;/B&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;input style=&quot;width:300px&quot; id=&quot;input_pid&quot; type=TEXT &#160; &gt;&lt;/input&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&amp;nbsp&amp;nbsp &lt;B&gt;UID:&lt;/B&gt;&lt;input style=&quot;width:300px&quot; id=&quot;input_uid&quot; type=TEXT &#160; &gt;&lt;/input&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&amp;nbsp&amp;nbsp&lt;button class=&quot;btn&quot; onclick=&quot;Refresh()&quot;&gt;Подключится&lt;/button&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;B&gt;Корзина:&lt;/B&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;select style=&quot;width:400px&quot; id=&quot;Recicle&quot; size=&quot;5&quot; multiple=&quot;multiple&quot; ondblclick=&quot;bilet_id()&quot;&gt; &lt;/select&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;button class=&quot;btn&quot; onclick=&quot;bilet_id()&quot;&gt;Удалить билет&lt;/button&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;B&gt;Действие:&lt;/B&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;input type=&quot;checkbox&quot; id=&quot;check01&quot; name=&quot;check01&quot; onClick='click01()' &gt; Зарезервировать&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;input type=&quot;checkbox&quot; id=&quot;check02&quot; name=&quot;check02&quot; onclick='click02()'&gt; Продать&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;B&gt;Ф.И.О:&lt;/B&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;input style=&quot;width:400px&quot; id=&quot;input_fio&quot; type=TEXT&#160; placeholder=&quot;Ф.И.О&quot; &gt;&lt;/input&gt;&lt;BR&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;B&gt;E-Mail:&lt;/B&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;input style=&quot;width:400px&quot; id=&quot;input_mail&quot; type=TEXT&#160; placeholder=&quot;E-Mail&quot; &gt;&lt;/input&gt;&lt;BR&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;B&gt;Адрес:&lt;/B&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;input style=&quot;width:400px&quot; id=&quot;input_address&quot; type=TEXT placeholder=&quot;Адрес&quot; &gt;&lt;/input&gt;&lt;BR&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;B&gt;Комментарии:&lt;/B&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;textarea rows=4 cols=47 id=&quot;input_komment&quot; placeholder=&quot;Комментарии&quot; &gt;&lt;/textarea&gt;&lt;BR&gt;&lt;/BR&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;button class=&quot;btn&quot; onclick=&quot;BuyTicket()&quot;&gt;Купить&lt;/button&gt;&lt;button class=&quot;btn&quot; onclick=&quot;clear_order()&quot;&gt;Очистить заказ&lt;/button&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	 </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+	</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;div&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160; &lt;iframe id=&quot;hallContainer&quot; style=&quot;width:850px;height:650px;border:0;&quot;&gt;&lt;/iframe&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;&#160; </div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;/div&gt;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&lt;/body&gt;</div>
+</td></tr></table></div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+<div class="p" style="text-align: left; direction: ltr; margin-left: 0px">
+&#160;</div>
+</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,376 @@
+.detbl
+{
+direction:ltr; border-spacing:0px;
+border-collapse: collapse;
+border: 0px none black;
+}
+.de_list
+{
+margin: 0;
+}
+div.p
+{
+margin-top:0px;
+margin-bottom:0px;
+font-weight:normal;
+}
+
+div.description_on_page div.p
+{font-family:"Arial";
+font-size: 12pt;color:#3f3f3f;
+font-style:normal;
+text-decoration:none;
+font-weight:normal;
+}
+h1
+{
+font-family:"Arial";
+font-size: 13pt;color:#375db0;
+font-style:normal;
+text-decoration:none;
+font-weight:normal;
+display:inline-block;
+margin:0;
+padding:0;
+}
+h2
+{
+font-family:"Arial";
+font-size: 11pt;color:#4f87fd;
+font-style:normal;
+text-decoration:none;
+font-weight:normal;
+display:inline-block;
+margin:0;
+padding:0;
+}
+span.code
+{
+font-family:"Courier New";
+font-size: 11pt;color:#000000;
+font-style:normal;
+text-decoration:none;
+font-weight:normal;
+}
+span.quote
+{
+font-family:"Georgia";
+font-size: 11pt;color:#000000;
+font-style:italic;
+text-decoration:none;
+font-weight:normal;
+}
+span.New_normal
+{
+font-family:"Arial";
+font-size: 12pt;color:#000000;
+font-style:normal;
+text-decoration:none;
+font-weight:normal;
+}
+img.de_25CC979863
+{
+margin-top: 7px; margin-right: 7px; margin-bottom: 7px; margin-left: 7px;}
+img.de_780D01ADE8
+{
+margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;}
+span.de_04C818310D
+{
+	font-family: "MS Shell Dlg";
+	font-size: 12pt;
+	color:#49b681;
+}
+span.de_0F609BFBFC
+{
+	color:#0000ff;
+	font-style:italic;
+	text-decoration:underline;
+}
+span.de_0F8DA881C8
+{
+	color:#49b681;
+}
+span.de_25ECF3A2FD
+{
+	font-family: "Arial";
+	font-size: 13pt;
+	color:#2532da;
+}
+span.de_289E3A8E03
+{
+	color:#37c83e;
+}
+span.de_29ABDA6FF8
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#808080;
+	font-style:italic;
+}
+span.de_2B91929B92
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#993333;
+}
+span.de_2B94C39861
+{
+	color:#0000ff;
+	text-decoration:underline;
+}
+span.de_2E47BB0409
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#b1b100;
+}
+span.de_31F2F67026
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#66cc66;
+}
+span.de_3755730707
+{
+	font-style:italic;
+	text-decoration:underline;
+}
+span.de_376CDFFE85
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#cc66cc;
+}
+span.de_3CF07A6314
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#2b73b7;
+}
+span.de_43AAE8AD69
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#006600;
+}
+span.de_476D3D315E
+{
+	text-decoration:underline;
+}
+span.de_4839423F5B
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#000000;
+}
+span.de_4DDBC84374
+{
+	font-size: 12pt;
+	font-style:italic;
+}
+span.de_51752156DC
+{
+	color:#000000;
+}
+span.de_532BB168F8
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#ff0000;
+}
+span.de_533C7C2B34
+{
+	font-family: "MS Shell Dlg";
+	font-size: 12pt;
+	color:#000000;
+}
+span.de_56F4564E24
+{
+	font-family: "Arial";
+	font-size: 12pt;
+	color:#000000;
+}
+span.de_6D2D8B1FD4
+{
+	font-size: 12pt;
+}
+span.de_71753B25E3
+{
+	font-size: 12pt;
+	color:#2532da;
+	text-decoration:underline;
+}
+span.de_7384113621
+{
+	font-size: 12pt;
+	color:#0000ff;
+	text-decoration:underline;
+}
+span.de_7ABC5C6D76
+{
+	font-family: "MS Shell Dlg";
+	font-size: 8pt;
+	color:#3f3f3f;
+}
+span.de_823826CA2C
+{
+	font-style:italic;
+}
+span.de_8875473D98
+{
+	color:#ff3600;
+}
+span.de_8CC65C3D97
+{
+	font-family: "Arial";
+	font-size: 12pt;
+	color:#333333;
+}
+span.de_90E3A3B670
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#333333;
+}
+span.de_94D8FA0CB6
+{
+	font-size: 12pt;
+	color:#2532da;
+}
+span.de_96D6BE88DC
+{
+	font-family: "Arial";
+	font-size: 12pt;
+	color:#ff3600;
+}
+span.de_9998EC8B4C
+{
+	font-size: 12pt;
+	color:#3f3f3f;
+	text-decoration:underline;
+}
+span.de_A357E5F0F8
+{
+	color:#3f3f3f;
+	font-style:italic;
+}
+span.de_A7D3B5AA0B
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#0000ff;
+}
+span.de_AC0D90E329
+{
+	font-size: 12pt;
+	color:#3f3f3f;
+}
+span.de_AC776ED092
+{
+	font-family: "Arial";
+	font-size: 12pt;
+	color:#0000ff;
+	text-decoration:underline;
+}
+span.de_AF8E96AF30
+{
+	font-family: "MS Shell Dlg";
+	font-size: 12pt;
+	color:#25da83;
+}
+span.de_AFDBF11270
+{
+	font-family: "Arial";
+	font-size: 12pt;
+	color:#333333;
+	font-style:italic;
+}
+span.de_C06EB17936
+{
+	font-family: "MS Shell Dlg";
+	font-size: 12pt;
+	color:#3f3f3f;
+}
+span.de_C19C7D07CB
+{
+	font-family: "Consolas";
+	font-size: 9pt;
+	color:#a31515;
+}
+span.de_CA1BBE3AD3
+{
+	font-family: "Arial";
+	font-size: 12pt;
+	color:#3f3f3f;
+}
+span.de_CB6A07B954
+{
+	font-family: "monospace";
+	font-size: 12pt;
+	color:#000066;
+}
+span.de_CCD88D350B
+{
+	font-family: "Arial";
+	font-size: 12pt;
+	color:#000000;
+	font-style:italic;
+}
+span.de_CED2805213
+{
+	color:#ff003c;
+}
+span.de_D21C8A5ED8
+{
+	font-family: "MS Shell Dlg";
+	font-size: 12pt;
+	color:#000000;
+	font-style:italic;
+}
+span.de_E34FF555CA
+{
+	font-family: "Arial";
+	font-size: 12pt;
+	color:#3f3f3f;
+	font-style:italic;
+}
+span.de_E3A7DE8AD3
+{
+	font-family: "MS Shell Dlg";
+	font-size: 12pt;
+	color:#ff003c;
+}
+span.de_E5937B5FA1
+{
+	font-family: "MS Shell Dlg";
+	font-size: 8pt;
+	color:#000000;
+}
+span.de_F30EFC8005
+{
+	font-family: "Arial";
+	font-size: 18pt;
+	color:#333333;
+}
+span.de_F3AF227D54
+{
+	font-family: "MS Shell Dlg";
+	font-size: 12pt;
+	color:#0000ff;
+	text-decoration:underline;
+}
+span.de_F559F5E290
+{
+	font-size: 48pt;
+}
+span.de_F74C9CAC1F
+{
+	font-family: "Arial";
+	font-size: 12pt;
+	color:#3f3f3f;
+	font-style:normal;
+}
+span.de_FA021CA4E5
+{
+	color:#3f3f3f;
+}

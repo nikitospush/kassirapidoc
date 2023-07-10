@@ -15,3 +15,19 @@ https://kassir.kartina.tv/SaveDeliveryOptions.cmd
 paymentType = BANK_PAY
 
 deliveryType= ETICKET
+
+#### разъяснение что значит client, login password
+
+в запросе на создание заказа /ConfirmOrderCommand.cmd есть следующие переменные
+```
+__auth   = это токен полученный после авторизации **пользователя** партнера через который делаются API колы;
+login    = логин от **пользователя** партнера через который делаются API колы;
+password = пароль от **пользователя** партнера через который делаются API колы; 
+order    = номер заказа
+status   = 1 - подтвержденный заказ. 
+email    = Email клиента
+client   = ID клиента 
+format   = json
+```
+
+UID пользователя, login, password можно получить от сотрудников biletkartina.tv 
